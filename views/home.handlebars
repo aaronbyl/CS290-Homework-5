@@ -1,0 +1,35 @@
+<h1>{{type}} Request Received</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Name</th>
+      <th>Parameter Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each urlParamList}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.value}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{#if postFlag}}
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Property Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each postParamList}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.value}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}
