@@ -24,7 +24,8 @@ app.get('/',function(req,res){
 
 app.post('/',function(req,res){
   var urlParams = [];
-  for (var param in req.query) {
+  for (var param in req.query) {ls
+  
     urlParams.push({'name':param,'value':req.query[param]});
   } 
   var postParams = [];
@@ -37,18 +38,6 @@ app.post('/',function(req,res){
   reqObj.urlParamList = urlParams;
   reqObj.postParamList = postParams;
   res.render('home',reqObj);
-});
-
-app.post('/post-loopback', function(req,res){
-  var qParams = [];
-  for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p]})
-  }
-  console.log(qParams);
-  console.log(req.body);
-  var context = {};
-  context.dataList = qParams;
-  res.render('post-loopback', context);
 });
 
 app.use(function(req,res){
