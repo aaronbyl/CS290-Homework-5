@@ -24,8 +24,7 @@ app.get('/',function(req,res){
 
 app.post('/',function(req,res){
   var urlParams = [];
-  for (var param in req.query) {ls
-  
+  for (var param in req.query) {  
     urlParams.push({'name':param,'value':req.query[param]});
   } 
   var postParams = [];
